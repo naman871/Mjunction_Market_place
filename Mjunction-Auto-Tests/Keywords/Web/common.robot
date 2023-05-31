@@ -1,6 +1,4 @@
 *** Settings ***
-Library           SeleniumLibrary
-Library           ExcelLibrary
 Resource          ../../Global/super.robot
 
 *** Keywords ***
@@ -13,6 +11,7 @@ Login to application
 
 Enter Username and Password
     [Arguments]    ${username}    ${password}
+    Wait Until Element Is Visible    ${textbox.username.text}    ${LONG_WAIT}
     Comment    To enter username
     SeleniumLibrary.Input Text    ${textbox.username.text}    ${username}
     Comment    To enter password
@@ -23,9 +22,19 @@ Enter Username and Password
 
 Launch Browser and navigate to URL
     [Arguments]    ${url}    ${browser_name}
-    Comment    To launch the browser
-    Open Browser    ${url}    ${browser_name}
-    Comment    To Maximize the browser window
+    Launch Browser    ${url}    ${browser_name}
     Maximize Browser Window
+    Wait Until Time    2
 
 Select Dropdown values
+
+Launch Browser
+    [Arguments]    ${url}    ${browser_name}
+    Run Keyword If    '${browser_name}'=='Chrome' or '${browser_name}'=='chrome'    SeleniumLibrary.Open Browser    ${url}    Chrome
+    Run Keyword If    '${browser_name}'=='Firefox' or '${browser_name}'=='firefox'    SeleniumLibrary.Open Browser    ${url}    Firefox
+
+Read data from Excel
+    [Arguments]    ${testcaseid}    ${sheet_name}
+    ${test_data}    CustomLibrary.Get Ms Excel Row Values Into Dictionary Based On Key    ${TEST_DATA_FOLDER}/TestData.xlsx    ${testcaseid}    ${sheet_name}
+    Set Global Variable    ${test_data}
+    [Return]    ${test_data}

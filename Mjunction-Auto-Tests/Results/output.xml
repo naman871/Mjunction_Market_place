@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.7.4 on win32)" generated="20230322 10:20:42.236" rpa="false" schemaversion="3">
+<suite id="s1" name="Mjunction-Auto-Tests" source="E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests">
+<suite id="s1-s1" name="KeywordTestcases" source="E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests\KeywordTestcases">
+<suite id="s1-s1-s1" name="Web" source="E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests\KeywordTestcases\Web">
+<suite id="s1-s1-s1-s1" name="Login" source="E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests\KeywordTestcases\Web\Login.robot">
+<test id="s1-s1-s1-s1-t1" name="TC_01 Basic login" line="5">
+<kw name="Comment" library="BuiltIn">
+<arg>Login to the Login to vedanta metalbazar application</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:43.274" endtime="20230322 10:20:43.275"/>
+</kw>
+<kw name="Login to application" library="common">
+<arg>${URL}</arg>
+<arg>${BROWSERNAME}</arg>
+<kw name="Comment" library="BuiltIn">
+<arg>To launch the browser and navigate to the url</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:43.277" endtime="20230322 10:20:43.277"/>
+</kw>
+<kw name="Launch Browser and navigate to URL" library="common">
+<arg>${URL}</arg>
+<arg>${BROWSERNAME}</arg>
+<kw name="Launch Browser" library="common">
+<arg>${url}</arg>
+<arg>${browser_name}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${browser_name}'=='Chrome' or '${browser_name}'=='chrome'</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${url}</arg>
+<arg>Chrome</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url}</arg>
+<arg>Chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230322 10:20:43.281" level="INFO">Opening browser 'Chrome' to base url 'https://test-vesale.mjunction.in/auth/sign_in'.</msg>
+<status status="PASS" starttime="20230322 10:20:43.280" endtime="20230322 10:20:52.251"/>
+</kw>
+<status status="PASS" starttime="20230322 10:20:43.279" endtime="20230322 10:20:52.252"/>
+</kw>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>'${browser_name}'=='Firefox' or '${browser_name}'=='firefox'</arg>
+<arg>SeleniumLibrary.Open Browser</arg>
+<arg>${url}</arg>
+<arg>Firefox</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" starttime="20230322 10:20:52.253" endtime="20230322 10:20:52.254"/>
+</kw>
+<status status="PASS" starttime="20230322 10:20:43.278" endtime="20230322 10:20:52.255"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" starttime="20230322 10:20:52.257" endtime="20230322 10:20:52.409"/>
+</kw>
+<kw name="Wait Until Time" library="CustomLibrary">
+<arg>2</arg>
+<status status="PASS" starttime="20230322 10:20:52.411" endtime="20230322 10:20:54.420"/>
+</kw>
+<status status="PASS" starttime="20230322 10:20:43.278" endtime="20230322 10:20:54.421"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>To Enter username and password</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:54.421" endtime="20230322 10:20:54.422"/>
+</kw>
+<kw name="Enter Username and Password" library="common">
+<arg>${user_name}</arg>
+<arg>${password}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${textbox.username.text}</arg>
+<arg>${LONG_WAIT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230322 10:20:54.423" endtime="20230322 10:20:54.464"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>To enter username</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:54.465" endtime="20230322 10:20:54.466"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox.username.text}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230322 10:20:54.467" level="INFO">Typing text 'https://test-vesale.mjunction.in/auth/sign_in' into text field '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20230322 10:20:54.466" endtime="20230322 10:20:54.639"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>To enter password</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:54.639" endtime="20230322 10:20:54.640"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox.password.text}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230322 10:20:54.641" level="INFO">Typing text 'Chrome' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20230322 10:20:54.640" endtime="20230322 10:20:54.757"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Click on login button</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:54.757" endtime="20230322 10:20:54.758"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button.login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230322 10:20:54.758" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20230322 10:20:54.758" endtime="20230322 10:20:54.959"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Validate home page is displayed</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:54.960" endtime="20230322 10:20:54.960"/>
+</kw>
+<status status="PASS" starttime="20230322 10:20:54.422" endtime="20230322 10:20:54.961"/>
+</kw>
+<status status="PASS" starttime="20230322 10:20:43.275" endtime="20230322 10:20:54.962"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:54.963" endtime="20230322 10:20:54.965"/>
+</kw>
+<kw name="Enter Username and Password" library="common">
+<arg>${USER_NAME}</arg>
+<arg>${PASSWORD}</arg>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${textbox.username.text}</arg>
+<arg>${LONG_WAIT}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20230322 10:20:54.968" endtime="20230322 10:20:55.002"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>To enter username</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:55.002" endtime="20230322 10:20:55.003"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox.username.text}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230322 10:20:55.004" level="INFO">Typing text 'VED23000719' into text field '//input[@id='username']'.</msg>
+<status status="PASS" starttime="20230322 10:20:55.003" endtime="20230322 10:20:55.110"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>To enter password</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:55.110" endtime="20230322 10:20:55.111"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${textbox.password.text}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230322 10:20:55.113" level="INFO">Typing text 'Pass@123' into text field '//input[@id='password']'.</msg>
+<status status="PASS" starttime="20230322 10:20:55.112" endtime="20230322 10:20:55.192"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Click on login button</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:55.192" endtime="20230322 10:20:55.193"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${button.login}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230322 10:20:55.194" level="INFO">Clicking element '//button[@type='submit']'.</msg>
+<status status="PASS" starttime="20230322 10:20:55.193" endtime="20230322 10:20:55.890"/>
+</kw>
+<kw name="Comment" library="BuiltIn">
+<arg>Validate home page is displayed</arg>
+<doc>Displays the given messages in the log file as keyword arguments.</doc>
+<status status="PASS" starttime="20230322 10:20:55.891" endtime="20230322 10:20:55.891"/>
+</kw>
+<status status="PASS" starttime="20230322 10:20:54.966" endtime="20230322 10:20:55.892"/>
+</kw>
+<status status="PASS" starttime="20230322 10:20:43.273" endtime="20230322 10:20:55.893"/>
+</test>
+<status status="PASS" starttime="20230322 10:20:42.525" endtime="20230322 10:20:55.896"/>
+</suite>
+<status status="PASS" starttime="20230322 10:20:42.316" endtime="20230322 10:20:55.902"/>
+</suite>
+<status status="PASS" starttime="20230322 10:20:42.314" endtime="20230322 10:20:55.909"/>
+</suite>
+<status status="PASS" starttime="20230322 10:20:42.280" endtime="20230322 10:20:55.915"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Mjunction-Auto-Tests">Mjunction-Auto-Tests</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="KeywordTestcases">Mjunction-Auto-Tests.KeywordTestcases</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Web">Mjunction-Auto-Tests.KeywordTestcases.Web</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1-s1" name="Login">Mjunction-Auto-Tests.KeywordTestcases.Web.Login</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20230322 10:20:43.249" level="WARN">Imported resource file 'E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests\ObjectRepository\Web\checkBox.robot' is empty.</msg>
+<msg timestamp="20230322 10:20:43.250" level="WARN">Imported resource file 'E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests\ObjectRepository\Web\dropDown.robot' is empty.</msg>
+<msg timestamp="20230322 10:20:43.251" level="WARN">Imported resource file 'E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests\ObjectRepository\Web\labels.robot' is empty.</msg>
+<msg timestamp="20230322 10:20:43.252" level="WARN">Imported resource file 'E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests\ObjectRepository\Web\radioButton.robot' is empty.</msg>
+<msg timestamp="20230322 10:20:43.255" level="WARN">Imported resource file 'E:\Robotframework\Mjunction_Market_place\Mjunction-Auto-Tests\Keywords\Web\Login.robot' is empty.</msg>
+</errors>
+</robot>
